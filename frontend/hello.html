@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sivasankar Editing Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, #2d89ef, #ff4081);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    header h1 {
+      margin: 20px 0 10px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background: #1e1e1e;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    h2 {
+      margin-top: 0;
+      color: #2d89ef;
+    }
+
+    /* About */
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .highlights {
+      margin-top: 15px;
+      list-style: none;
+      padding: 0;
+    }
+    .highlights li {
+      margin: 8px 0;
+      background: #2a2a2a;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .skill {
+      background: #2a2a2a;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #2a2a2a;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #2a2a2a;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .project-card h3 {
+      margin: 10px 0 5px;
+      color: #ff4081;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+      padding: 0 10px 15px;
+    }
+
+    /* Contact */
+    .contact p {
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2d89ef;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <!-- Your real profile image (keep file name same as in your folder) -->
+    <img src="sivaeditor.jpg" alt="Sivasankar Profile">
+    <h1>Sivasankar</h1>
+    <p>Creative Video & Photo Editor</p>
+  </header>
+
+  <div class="container">
+
+    <!-- About -->
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate editor who transforms raw clips and photos into stunning visuals. 
+        With creativity and precision, I bring life to content for YouTube, Instagram, and other platforms. 
+        My focus is on smooth transitions, engaging effects, and professional designs.
+      </p>
+      <ul class="highlights">
+        <li>✔ 3+ years of editing experience</li>
+        <li>✔ Specialized in cinematic video editing</li>
+        <li>✔ Strong knowledge of color grading and effects</li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills">
+      <h2>My Skills</h2>
+      <div class="skills-list">
+        <div class="skill">Adobe Premiere Pro</div>
+        <div class="skill">Adobe After Effects</div>
+        <div class="skill">Adobe Photoshop</div>
+        <div class="skill">Filmora</div>
+        <div class="skill">DaVinci Resolve</div>
+        <div class="skill">Color Grading</div>
+        <div class="skill">Motion Graphics</div>
+        <div class="skill">Thumbnail Design</div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+      <h2>Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>YouTube Editing</h3>
+          <p>Intros, montages, cinematic edits, and full-length video production.</p>
+        </div>
+        <div class="service-card">
+          <h3>Social Media Edits</h3>
+          <p>Instagram reels, shorts, trending edits, and engaging clips.</p>
+        </div>
+        <div class="service-card">
+          <h3>Photo Editing</h3>
+          <p>Retouching, poster design, thumbnails, and creative manipulations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="YouTube Edit">
+          <h3>YouTube Video Edits</h3>
+          <p>Edited engaging intros, cinematic montages, and smooth transitions.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="Reels Edit">
+          <h3>Instagram Reels</h3>
+          <p>Created viral reels with trending effects, captions, and sound sync.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80" alt="Photo Manipulation">
+          <h3>Photo Manipulations</h3>
+          <p>Designed posters, thumbnails, and creative photo edits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email: <strong>sivasankar99122@email.com</strong></p>
+      <p>Instagram: <strong>@editorvfxcraft</strong></p>
+      <p>Phone: <strong>+91 99122 76561</strong></p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sivasankar. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

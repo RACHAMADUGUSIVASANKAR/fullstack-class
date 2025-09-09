@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sivasankar Editing Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      display: flex;
+    }
+
+    /* Sidebar Navigation */
+    nav {
+      width: 220px;
+      background: #2d89ef;
+      color: #fff;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 2rem 1rem;
+    }
+    nav h2 {
+      margin: 0 0 1rem;
+      font-size: 1.5rem;
+    }
+    nav a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 0.8rem 0;
+      padding: 0.5rem;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background: #1b5fb8;
+    }
+
+    /* Content Area */
+    .content {
+      margin-left: 240px;
+      padding: 2rem;
+      flex: 1;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #2d89ef;
+    }
+
+    /* About Section */
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+    .about-container img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .about-text {
+      flex: 1;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+      background: #fafafa;
+      text-align: center;
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: #2d89ef;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 20px;
+      background: #2d89ef;
+      color: #fff;
+      border-radius: 6px;
+    }
+
+    /* Mobile View */
+    @media (max-width: 700px) {
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+      }
+      .content {
+        margin-left: 0;
+      }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>My Portfolio</h2>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="content">
+    <section id="home">
+      <h1>Hello, I'm Sivasankar</h1>
+      <p>Welcome to my portfolio. I am a passionate <strong>Video & Photo Editor</strong> who loves creating engaging visuals, edits, and designs.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <!-- Replace with your actual image file -->
+        <img src="sivaeditor.jpg" alt="Sivasankar Profile Picture">
+        <div class="about-text">
+          <p>
+            I specialize in <strong>video editing, photo retouching, and creative content design</strong>.  
+            My goal is to bring stories to life through visuals, whether it's YouTube videos, reels, short films, or thumbnails.  
+            I am constantly improving my skills to make edits look clean, smooth, and professional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>My Editing Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>YouTube Video Edits</h3>
+          <p>Created engaging intros, montages, and smooth transitions for YouTube content.</p>
+        </div>
+        <div class="project-card">
+          <h3>Instagram Reels</h3>
+          <p>Edited short-form content with trending effects, captions, and audio sync.</p>
+        </div>
+        <div class="project-card">
+          <h3>Photo Manipulations</h3>
+          <p>Retouched and designed creative posters, thumbnails, and banners.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>You can reach me at: <strong>sivasankar@email.com</strong></p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Sivasankar. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
