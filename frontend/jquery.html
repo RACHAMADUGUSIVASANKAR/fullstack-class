@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Weather App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(21, 202, 202);
+        }
+
+        #weather {
+            margin-top: 20px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        p {
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(254, 3, 3, 0.942);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JQUERY WEATHER APP</h2><br><br>
+    <p>Enter a city to see the weather.</p>
+    <input type="text" id="cityInput" placeholder="e.g., London, Delhi...">
+    <button id="fetchBtn">Get Weather</button><br><br>
+    <div id="weather">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const cityCoords = {
+                "bangalore": { lat: 12.97, lon: 77.59 },
+                "delhi": { lat: 28.61, lon: 77.20 },
+                "mumbai": { lat: 19.07, lon: 72.87 },
+                "london": { lat: 51.51, lon: -0.13 },
+                "new york": { lat: 40.71, lon: -74.01 }
+            };
+
+            // Event Listener for button using jQuery
+            $("#fetchBtn").on("click", function () {
+                let city = $("#cityInput").val().toLowerCase().trim();
+
+                if (!city) {
+                    $("#weather").html("⚠️ Please enter a city name.");
+                    return;
+                }
+
+                if (!cityCoords[city]) {
+                    $("#weather").html("⚠️ City not in our list! Try another.");
+                    return;
+                }
+
+                let coords = cityCoords[city];
+                let url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&current_weather=true`;
+
+                // AJAX Fetch using jQuery
+                $.ajax({
+                    url: url,
+                    method: 'GET',
+                    success: function (data) {
+                        if (data.current_weather) {
+                            // Capitalize the first letter of the city for display
+                            const displayCity = city.charAt(0).toUpperCase() + city.slice(1);
+                            $("#weather").html(`
+                <h3>Weather in ${displayCity}</h3>
+                <p>🌡 Temp: ${data.current_weather.temperature}°C</p>
+                <p>💨 Wind: ${data.current_weather.windspeed} km/h</p>
+                <p>⏱ Time: ${new Date(data.current_weather.time).toLocaleTimeString()}</p>
+              `);
+                        } else {
+                            $("#weather").html("⚠️ No data available.");
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error fetching data: ", error);
+                        $("#weather").html("⚠️ Error fetching weather data.");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

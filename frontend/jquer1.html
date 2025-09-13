@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--1.jquery basics
+    2.button event(single,double click,hover event)
+    3.DOM operations
+    4.keydown event-->
+    <title>jquery,button,dom,keydown</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(160, 239, 23);
+        }
+
+        p {
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(36, 4, 4, 0.942);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h2>Hello jQuery</h2>
+    <h3>just for timepass</h3>
+    <button id="btn">Click Me</button>
+    <div class="temp">
+        <p>this is a different division
+            on which we are using the class tags using jquery
+        </p>
+    </div>
+    <input type="text" id="myInput">
+    <p id="output">Hi this text</p>
+    <ul id="list">
+        <li>Item 1</li>
+    </ul>
+    <button id="add">Add Item</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button id="addf">Add Item first</button><br><br>
+    <button id="removef">Remove first</button>&nbsp;&nbsp;
+    <button id="removel">Remove last</button>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("h2").text("Button Clicked!");
+                $("h3").text("Button Clicked! Duplicate");
+                $(".temp").css("background-color", "yellow");
+                $("p").css("font-weight", "bold");
+            });
+
+
+
+            $("#add").click(function () {
+                $("#list").append("<li>New Item appended from script</li>");
+            });
+            $("#addf").click(function () {
+                $("#list").prepend("<li>New Item prepended from script</li>");
+            });
+            $("#removef").click(function () {
+                $("#list li:first").remove();
+            });
+            $("#removel").click(function () {
+                $("#list li:last").remove();
+            });
+
+
+
+            $("#myInput").keydown(function () {
+                let val = $("#myInput").val();
+                $("#output").text(val);
+            });
+            $("#btn").dblclick(function () {
+                $("h2").text("Button Clicked Twice!");
+                $("h3").text("Button Clicked! Twice Duplicate");
+                $(".temp").css("background-color", "orange");
+                $("p").css("font-weight", "calibri");
+            });
+            $("#btn").hover(function () {
+                $("h2").text("Button Clicked but Hovered!");
+                $("h3").text("Button  and Hovered! Duplicate");
+                $(".temp").css("background-color", "cyan");
+                $("p").css("font-weight", "italic");
+            });
+        });
+    </script>
+</body>
+
+</html>

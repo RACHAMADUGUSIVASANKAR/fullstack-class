@@ -1,4 +1,5 @@
 console.log("srit")
+document.getElementById("output").innerText = "Hello World";
 
 //data types
 

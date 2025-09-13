@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Professional TODO App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #434343;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #000000;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        input {
+            padding: 12px;
+            width: 300px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            outline: none;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 16px;
+            margin: 5px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #todoList {
+            list-style: decimal inside;
+            padding-left: 0;
+            width: 350px;
+        }
+
+        #todoList li {
+            background: #fff;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .deleteBtn {
+            background-color: #e74c3c;
+            font-size: 12px;
+            padding: 6px 10px;
+        } 
+
+        .deleteBtn:hover {
+            background-color: #c0392b;
+        }
+
+        .completeBtn {
+            background-color: #2ecc71;
+            font-size: 12px;
+            padding: 6px 10px;
+            margin-right: 5px;
+        }
+
+        .completeBtn:hover {
+            background-color: #27ae60;
+        } 
+        .completed {
+            text-decoration: line-through;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TODO APP</h1>
+    <h2>These are the tasks to complete today✅</h2>
+
+    <input type="text" id="newTaskInput" placeholder="Enter new task"><br>
+
+    <div>
+        <button id="addTaskBtn">Add Task</button>
+        <button id="clearTasksBtn">Clear All</button>
+        <button id="removeLastTaskBtn">Remove Last</button>
+        <button id="removeFirstTaskBtn">Remove First</button>
+    </div>
+
+    <ol id="todoList">
+        <li>
+            Learn HTML
+            <div>
+                <button class="completeBtn">Complete</button>
+                <button class="deleteBtn">Delete</button>
+            </div>
+        </li>
+        <li>
+            Learn CSS
+            <div>
+                <button class="completeBtn">Complete</button>
+                <button class="deleteBtn">Delete</button>
+            </div>
+        </li>
+        <li>
+            Learn JavaScript
+            <div>
+                <button class="completeBtn">Complete</button>
+                <button class="deleteBtn">Delete</button>
+            </div>
+        </li>
+    </ol>
+
+    <script>
+        $(document).ready(function () {
+            // Add Task
+            $("#addTaskBtn").click(function () {
+                let newTask = $("#newTaskInput").val().trim();
+                if (newTask) {
+                    let li = $("<li>").text(newTask + " ");
+                    let btnGroup = $("<div>");
+                    let complete = $("<button>").addClass("completeBtn").text("Complete");
+                    let del = $("<button>").addClass("deleteBtn").text("Delete");
+                    btnGroup.append(complete, del);
+                    li.html(newTask).append(btnGroup);
+                    $("#todoList").append(li);
+                    $("#newTaskInput").val("");
+                }
+            });
+
+            // Clear all
+            $("#clearTasksBtn").click(function () {
+                $("#todoList").empty();
+            });
+
+            // Remove last / first
+            $("#removeLastTaskBtn").click(function () {
+                $("#todoList li:last").remove();
+            });
+            $("#removeFirstTaskBtn").click(function () {
+                $("#todoList li:first").remove();
+            });
+
+            // Delete specific task
+            $("#todoList").on("click", ".deleteBtn", function () {
+                $(this).closest("li").remove();
+            });
+
+            // Mark as complete
+            $("#todoList").on("click", ".completeBtn", function () {
+                $(this).closest("li").toggleClass("completed");
+            });
+        });
+    </script>
+</body>
+
+</html>
