@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 5px;
+      cursor: pointer;
+    }
+    input.edit-task {
+      width: 90%;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h2>My To-Do List</h2>
+  <ul id="todo-list">
+    <li>css</li>
+    <li>project</li>
+    <li>python</li>
+  </ul>
+
+  <script>
+    $(document).ready(function() {
+      // Handle double-click to edit
+      $("#todo-list").on("dblclick", "li", function() {
+        let currentText = $(this).text();
+        let input = $("<input type='text' class='edit-task'>").val(currentText);
+        $(this).html(input);
+        input.focus();
+
+        // Save on Enter key
+        input.keydown(function(e) {
+          if (e.key === "Enter") {
+            let newText = $(this).val();
+            $(this).parent().text(newText);
+          }
+        });
+
+        // Save on blur (click outside)
+        input.blur(function() {
+          let newText = $(this).val();
+          $(this).parent().text(newText);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
