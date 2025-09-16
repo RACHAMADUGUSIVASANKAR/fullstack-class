@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f4f4f4;
+  background-color: #000000;
 }
 
 .calculator {
@@ -13,7 +13,7 @@ body {
   border-radius: 10px;
   width: 300px;
   text-align: center;
-  color: #fff;
+  color: #000000;
 }
 
 .display {
@@ -40,7 +40,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   background-color: #444;
-  color: #fff;
+  color: #ffffff;
   transition: 0.2s;
 }
 
